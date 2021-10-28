@@ -10,9 +10,9 @@ lado3 = float(input('Digite o terceiro lado do triangulo\n>>'))
 
 if lado1 < lado2 + lado3 and lado2 < lado1 + lado3 and lado3 < lado1 + lado2:
     print('Você formou um triangulo ▲ ', end='')
-    if lado1 == lado2 and lado1 == lado3:
+    if lado1 == lado2 == lado3:
         print('EQUILATERO')
-    elif lado1 != lado2 and lado1 != lado3 and lado3 != lado2:
+    elif lado1 != lado2 != lado3 != lado1:
         print('ESCALENO')
     else:
         print('ISÓCELES')
