@@ -18,11 +18,11 @@ altura = float(input('Isira aqui a sua altura \n'))
 imc = peso / (pow(altura, 2))
 if imc < 18.5:
     print('Seu IMC é de {:.1f}, e você está {}ABAIXO DO PESO{}'.format(imc, cores['vermelho'], cores['limpa']))
-elif imc >= 18.5 and imc < 25:
+elif 18.5 <= imc < 25:
     print('Seu IMC é de {:.1f}, e você está {}NO PESO IDEAL{}'.format(imc, cores['verde'], cores['limpa']))
-elif imc >= 25 and imc < 30:
+elif 25 <= imc < 30:
     print('Seu IMC é de {:.1f}, e você está {}COM SOBREPESO{}'.format(imc, cores['azul'], cores['limpa']))
-elif imc >= 30 and imc < 40:
+elif 30 <= imc < 40:
     print('Seu IMC é de {:.1f}, e você está {}COM OBESIDADE{}'.format(imc, cores['amarelo'], cores['limpa']))
 else:
     print('Seu IMC é de {:.1f}, e você está {}COM OBESIDADE MORBIDA{}'.format(imc, cores['vermelho'], cores['limpa']))
