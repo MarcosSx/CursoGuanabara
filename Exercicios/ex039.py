@@ -8,7 +8,7 @@ anoNas = int(input('Digite o ano que nasceu?\n'))
 idade = date.today().year - anoNas
 
 if idade > 18:
-    alistou = str(input('Ja se alistou-se no EB (S) ou (N)?\n')).upper()
+    alistou = str(input('Ja alistou-se no EB (S) ou (N)?\n')).upper()
 
     if alistou == 'N':
         passou = idade - 18
