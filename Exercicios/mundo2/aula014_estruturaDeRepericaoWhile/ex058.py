@@ -30,6 +30,9 @@ print('.\n', end='')
 
 palpite = int(input('Qual seu palpite?\n>'))
 while palpite != bot:
-    palpite = int(input('Palpite errado, chute novamente\n>'))
+    if palpite > bot:
+        palpite = int(input('Menos... tente novamente\n>'))
+    else:
+        palpite = int(input('Mais... tente novamente\n>'))
     tentativas += 1
-print('Voce precisou de {} tentativas pra acertar'.format(tentativas))
+print('Voce precisou de {} tentativas pra acertar. PARABENS!!!'.format(tentativas))
