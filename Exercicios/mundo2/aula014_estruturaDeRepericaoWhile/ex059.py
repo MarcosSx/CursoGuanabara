@@ -29,5 +29,6 @@ while sair != 5:
             print('Voce digitou {}\nOPÇÃO INVALIDA'.format(opcao))
     elif opcao == 5:
         sair = opcao
+        print('Finalizando programa...')
     else:
         print('Voce digitou {}\nOPÇÃO INVALIDA'.format(opcao))
