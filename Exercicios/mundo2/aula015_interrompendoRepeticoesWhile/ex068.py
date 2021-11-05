@@ -2,8 +2,8 @@
 # jogador perder, mostrando o total de vitórias consecutivas que ele conquistou no final do jogo.
 from random import randint
 cont = 0
-bot = randint(0, 10)
 while True:
+    bot = randint(0, 10)
     n = int(input('Insira um numero: '))
     escolha = str(input('Par ou ímpar? [P/I]: '))
     if escolha not in 'PpIi':
