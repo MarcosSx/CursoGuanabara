@@ -10,7 +10,7 @@ while True:
         escolha = str(input('Par ou ímpar? [P/I]: ')).strip().upper()[0]
     soma = n + bot
     if soma % 2 == 0:
-        if escolha in 'Pp':
+        if escolha in 'P':
             print('Voce venceu')
             print(f'O computador escolheu Ímpar e jogou {bot} e voce escolheu Par e jogou {n} e a soma é {soma}')
             cont += 1
@@ -19,7 +19,7 @@ while True:
             print(f'O computador escolheu Par e jogou {bot} e voce escolheu Ímpar e jogou {n} e a soma é {soma}')
             break
     else:
-        if escolha in 'Ii':
+        if escolha in 'I':
             print('Voce venceu')
             print(f'O computador escolheu Par e jogou {bot} e voce escolheu Ímpar e jogou {n} e a soma é {soma}')
             cont += 1
