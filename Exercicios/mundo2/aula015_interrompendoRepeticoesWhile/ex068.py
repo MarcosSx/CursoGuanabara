@@ -5,9 +5,9 @@ cont = 0
 while True:
     bot = randint(0, 10)
     n = int(input('Insira um numero: '))
-    escolha = str(input('Par ou ímpar? [P/I]: '))
-    if escolha not in 'PpIi':
-        escolha = str(input('Par ou ímpar? [P/I]: '))
+    escolha = ' '
+    while escolha not in 'PI':
+        escolha = str(input('Par ou ímpar? [P/I]: ')).strip().upper()[0]
     soma = n + bot
     if soma % 2 == 0:
         if escolha in 'Pp':
