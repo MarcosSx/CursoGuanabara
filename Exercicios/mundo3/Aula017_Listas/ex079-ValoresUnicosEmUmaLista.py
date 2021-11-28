@@ -17,5 +17,6 @@ while True:
         parar = input('Deseja parar [S/N]: ').upper().strip()[0]
     if parar in 'S':
         break
-
+lista.sort()
+print(lista)
 print(sorted(lista))
