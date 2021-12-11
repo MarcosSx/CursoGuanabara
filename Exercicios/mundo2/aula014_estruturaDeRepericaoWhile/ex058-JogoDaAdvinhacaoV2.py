@@ -5,30 +5,13 @@ from random import randint
 from time import sleep
 bot = randint(0, 10)
 tentativas = 1
+pensa = 'PENSANDO...'
 print('O computador esta pensando em um numero entre 0 e 10')
-print('P', end='')
-sleep(0.3)
-print('E', end='')
-sleep(0.3)
-print('N', end='')
-sleep(0.3)
-print('S', end='')
-sleep(0.3)
-print('A', end='')
-sleep(0.3)
-print('N', end='')
-sleep(0.3)
-print('D', end='')
-sleep(0.3)
-print('O', end='')
-sleep(0.3)
-print('.', end='')
-sleep(0.3)
-print('.', end='')
-sleep(0.3)
-print('.\n', end='')
+for x in pensa:
+    print(x, end='')
+    sleep(0.3)
 
-palpite = int(input('Qual seu palpite?\n>'))
+palpite = int(input('\nQual seu palpite?\n>'))
 while palpite != bot:
     if palpite > bot:
         palpite = int(input('Menos... tente novamente\n>'))
