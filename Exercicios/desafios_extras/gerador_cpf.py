@@ -1,9 +1,10 @@
 from random import randint
 
 cpf = list()
+# gera 9 numeros aleatorios e adiciona na lista cpf xxx.xxx.xxx
 for num in range(0, 9):
     cpf.append(randint(0, 9))
-# gerar o primeiro e segundo digito
+# gerar os dois ultimos digitos e adiciona ao cpf xxx.xxx.xxx-xx
 for i in range(0, 2):
     quant = len(cpf) + 1
     soma = 0
@@ -15,4 +16,3 @@ for i in range(0, 2):
     else:
         cpf.append(11 - (soma % 11))
 print('%s%s%s.%s%s%s.%s%s%s-%s%s' % tuple(cpf))
-    

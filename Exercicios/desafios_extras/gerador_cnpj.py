@@ -1,6 +1,7 @@
 from random import randint
 
 cnpj = list()
+# gera 12 numeros aleatorios e adiciona na lista cnpj xx.xxx.xxx/xxxx
 for i in range(0, 12):
     if len(cnpj) < 8:
         cnpj.append(randint(0, 9))
@@ -8,6 +9,7 @@ for i in range(0, 12):
         cnpj.append(0)
     else:
         cnpj.append(1)
+# gera os dois ultimos digitos e adiciona ao cnpj xx.xxx.xxx.xxx/xxxx-xx
 for i in range(2):
     contb1 = len(cnpj) - 7
     contb2 = 9
