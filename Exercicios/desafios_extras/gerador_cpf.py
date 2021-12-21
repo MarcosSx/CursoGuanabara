@@ -15,4 +15,9 @@ for i in range(0, 2):
         cpf.append(0)
     else:
         cpf.append(11 - (soma % 11))
-print('%s%s%s.%s%s%s.%s%s%s-%s%s' % tuple(cpf))
+cpfFormatado = '%s%s%s.%s%s%s.%s%s%s-%s%s' % tuple(cpf)
+print(cpfFormatado)
+
+cpfFormatado = cpfFormatado.replace('.', '').replace('-', '')
+print(cpfFormatado)
+

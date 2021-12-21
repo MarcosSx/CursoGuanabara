@@ -25,4 +25,7 @@ for i in range(2):
         cnpj.append(0)
     else:
         cnpj.append(11 - (soma % 11))
-print('%d%d.%d%d%d.%d%d%d/%d%d%d%d-%d%d' % tuple(cnpj))
+cnpjFormatado = '%d%d.%d%d%d.%d%d%d/%d%d%d%d-%d%d' % tuple(cnpj)
+print(cnpjFormatado)
+
+
