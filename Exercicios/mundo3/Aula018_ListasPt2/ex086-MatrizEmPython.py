@@ -6,7 +6,7 @@ for l in range(0, 3):
     for c in range(0, 3):
         matriz[l][c] = int(input(f'Digite um valor para a posição [{l}, {c}]: '))
 print('*-*' * 15)
-for l in range(0, 3):
-    for c in range(0, 3):
-        print(f'[{matriz[l][c]:^6}]', end='')
+for li in range(0, 3):
+    for co in range(0, 3):
+        print(f'[{matriz[li][co]:^6}]', end='')
     print()
