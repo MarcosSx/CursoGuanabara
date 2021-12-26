@@ -1,9 +1,7 @@
 import string
 
-letras = string.printable
 alpha = list()
-
-for l in letras:
+for l in string.printable:
     alpha.append(l)
 
 chave = 5
