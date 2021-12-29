@@ -15,7 +15,7 @@ def dobro(n, f=False):
 
 
 def moeda(n):
-    return f'R$ {n:.2f}'
+    return f'R$ {n:.2f}'.replace('.', ',')
 
 
 def resumo(p, aum, dim):
