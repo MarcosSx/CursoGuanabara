@@ -1,18 +1,14 @@
 import string
 
-alpha = list()
-for l in string.printable:
-    alpha.append(l)
-
+a = string.printable
 chave = 5
-mensagem = str(input('PassWord: ')).strip()
-
-n = len(alpha)
+mensagem = str(input('PassWord: '))
+n = len(a)
 cifrada = ''
 
 for letra in mensagem:
-    indice = alpha.index(letra)
-    nova_letra = alpha[(indice + chave) % n]
+    indice = a.index(letra)
+    nova_letra = a[(indice + chave) % n]
     cifrada += nova_letra
 
 print(cifrada)
