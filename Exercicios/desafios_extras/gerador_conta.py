@@ -21,7 +21,7 @@ def formatter(list, type, digit=''):
     for i in list:
         formatted += str(i)
     if type.upper() in 'AG':
-        return f'AG: {formatted} 'if str(digit) in '' else f'AG: {formatted}-{str(digit)} '
+        return f'AG: {formatted} ' if str(digit) in '' else f'AG: {formatted}-{str(digit)} '
     elif type.upper() in 'CC':
         return f'CC: {formatted}-{str(digit)}'
     else:
@@ -45,7 +45,6 @@ def banco_do_brazil():
 
     agency_formatted = formatter(agency, 'A', agency_dv)
     account_formatted = formatter(account, 'CC', account_dv)
-    # print(agency_formatted + account_formatted)
     return f'{agency_formatted}{account_formatted}'
 
 
@@ -61,7 +60,6 @@ def citibank():
 
     agency_formatted = formatter(agency, 'AG')
     account_formatted = formatter(account, 'CC', str(account_dv))
-    # print(agency_formatted + account_formatted)
     return f'{agency_formatted}{account_formatted}'
 
 
@@ -84,13 +82,11 @@ def itau():
         account_dv = 0
 
     account_formatted = formatter(account, 'ALL', str(account_dv))
-    # print(account_formatted)
     return account_formatted
 
 
 def caixa():
     agency = generic_agency_or_account()
-    # tipo de conta corrente pf 001
     account = [0, 0, 1]
 
     for i in range(0, 12):
@@ -111,7 +107,6 @@ def caixa():
         account_dv = 0
 
     account_formatted = formatter(account, 'ALL', str(account_dv))
-    # print(account_formatted)
     return account_formatted
 
 
@@ -132,7 +127,6 @@ def santander():
         account_dv = 0
 
     account_formatted = formatter(account, 'ALL', str(account_dv))
-    # print(account_formatted)
     return account_formatted
 
 
@@ -153,8 +147,47 @@ def bradesco():
 
     agency_formatted = formatter(agency, 'AG', agency_dv)
     account_formatted = formatter(account, 'CC', account_dv)
-    # print(agency_formatted + account_formatted)
     return f'{agency_formatted}{account_formatted}'
+
+
+def real():
+    agency = generic_agency_or_account()
+    account = generic_agency_or_account(7)
+    multipliers = [8, 1, 4, 7, 2, 2, 5, 9, 3, 9, 5]
+
+    for i in reversed(agency):
+        account.insert(0, i)
+
+    sum_account_dv = 0
+    for i in range(len(multipliers)):
+        sum_account_dv += account[i] * multipliers[i]
+
+    account_dv = abs(sum_account_dv % 11 - 11)
+    if sum_account_dv % 11 <= 1:
+        account_dv = 1 if sum_account_dv == 0 else 1
+
+    account_formatted = formatter(account, 'ALL', str(account_dv))
+    return f'{account_formatted}'
+
+
+def hsbc():
+    agency = generic_agency_or_account()
+    account = generic_agency_or_account(6)
+    multipliers = [8, 9, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    for i in reversed(agency):
+        account.insert(0, i)
+
+    sum_account_dv = 0
+    for i in range(len(multipliers)):
+        sum_account_dv += account[i] * multipliers[i]
+
+    account_dv = abs(sum_account_dv % 11)
+    if account_dv == 0 or account_dv == 10:
+        account_dv = 0
+
+    account_formatted = formatter(account, 'ALL', str(account_dv))
+    return f'{account_formatted}'
 
 
 print(f'Banco do Brasil\n{banco_do_brazil()}\n')
@@ -162,4 +195,6 @@ print(f'Santander\n{santander()}\n')
 print(f'Bradesco\n{bradesco()}\n')
 print(f'Caixa economica federal\n{caixa()}\n')
 print(f'Itaú\n{itau()}\n')
+print(f'Real\n{real()}\n')
 print(f'Citibank\n{citibank()}\n')
+print(f'HSBC\n{hsbc()}\n')
