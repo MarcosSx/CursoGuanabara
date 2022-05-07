@@ -4,16 +4,12 @@ from random import randint
 def cpf_cnpj_numbers_generator(type):
     generic_cpf_cnpj = []
     if type.upper() == 'CPF':
-        for num in range(0, 9):
-            generic_cpf_cnpj.append(randint(0, 9))
+        generic_cpf_cnpj = [randint(0, 9) for x in range(9)]
     elif type.upper() == 'CNPJ':
-        for i in range(0, 12):
-            if len(generic_cpf_cnpj) < 8:
-                generic_cpf_cnpj.append(randint(0, 9))
-            elif len(generic_cpf_cnpj) < 11:
-                generic_cpf_cnpj.append(0)
-            else:
-                generic_cpf_cnpj.append(1)
+        generic_cpf_cnpj = [randint(0, 9) for x in range(8)]
+        for i in range(0, 3):
+            generic_cpf_cnpj.append(0)
+        generic_cpf_cnpj.append(1)
     return generic_cpf_cnpj
 
 
