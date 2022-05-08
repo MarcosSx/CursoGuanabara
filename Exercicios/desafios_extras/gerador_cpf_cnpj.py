@@ -1,3 +1,4 @@
+import re
 from random import randint
 
 
@@ -49,5 +50,19 @@ def cpf_cnpj_generator(type, formatted=False):
     return formatter(cpf_cnpj, formatted)
 
 
+def validator_cpf_cnpj(value):
+    value = re.sub(r'\D', '', value)
+    if value == '' or len(value) < 11 or (value[0] * len(value) == value):
+        return False
+    else:
+        cpf_cnpj = list(map(int, value[:9]))
+        cpf_cnpj.append(validator_digit_generator(cpf_cnpj))
+        cpf_cnpj.append(validator_digit_generator(cpf_cnpj))
+        return formatter(cpf_cnpj) == formatter(value)
+
+
+print(validator_cpf_cnpj('027.448.078-69'))
+print(validator_cpf_cnpj('11111111111'))
 print(cpf_cnpj_generator('cpf', True))
 print(cpf_cnpj_generator('cnpj', True))
+print(validator_cpf_cnpj(cpf_cnpj_generator('cpf')))
