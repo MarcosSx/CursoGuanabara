@@ -36,7 +36,7 @@ def formatter(doc, formatted=True):
         if len(doc) <= 12:
             formatted_doc = '%s%s%s.%s%s%s.%s%s%s-%s%s' % tuple(doc)
         else:
-            formatted_doc = '%d%d.%d%d%d.%d%d%d/%d%d%d%d-%d%d' % tuple(doc)
+            formatted_doc = '%s%s.%s%s%s.%s%s%s/%s%s%s%s-%s%s' % tuple(doc)
     else:
         for i in doc:
             formatted_doc += str(i)
@@ -55,13 +55,17 @@ def validator_cpf_cnpj(value):
     if value == '' or len(value) < 11 or (value[0] * len(value) == value):
         return False
     else:
-        cpf_cnpj = list(map(int, value[:9]))
+        cpf_cnpj = value
+        if len(cpf_cnpj) <= 12:
+            cpf_cnpj = list(map(int, value[:9]))
+        else:
+            cpf_cnpj = list(map(int, value[:12]))
         cpf_cnpj.append(validator_digit_generator(cpf_cnpj))
         cpf_cnpj.append(validator_digit_generator(cpf_cnpj))
         return formatter(cpf_cnpj) == formatter(value)
 
 
-print(validator_cpf_cnpj('027.448.078-69'))
+print(validator_cpf_cnpj('90.618.556/0001-39'))
 print(validator_cpf_cnpj('11111111111'))
 print(cpf_cnpj_generator('cpf', True))
 print(cpf_cnpj_generator('cnpj', True))
