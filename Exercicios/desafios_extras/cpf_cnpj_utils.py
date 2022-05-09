@@ -64,9 +64,3 @@ def validator_cpf_cnpj(value):
         cpf_cnpj.append(validator_digit_generator(cpf_cnpj))
         return formatter(cpf_cnpj) == formatter(value)
 
-
-print(validator_cpf_cnpj('90.618.556/0001-39'))
-print(validator_cpf_cnpj('11111111111'))
-print(cpf_cnpj_generator('cpf', True))
-print(cpf_cnpj_generator('cnpj', True))
-print(validator_cpf_cnpj(cpf_cnpj_generator('cpf')))
