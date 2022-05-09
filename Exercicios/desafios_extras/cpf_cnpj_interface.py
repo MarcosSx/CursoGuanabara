@@ -11,7 +11,6 @@ cor_laranja = '#ff7b00'
 
 root = tk.Tk()
 root.title('Gerador/Validador de CPF e CNPJ')
-root.iconbitmap(default='icones\\ico.ico')
 root.config(background=cor_branca, padx=5, pady=5)
 
 

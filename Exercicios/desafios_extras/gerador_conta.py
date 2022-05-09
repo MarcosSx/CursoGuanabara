@@ -198,3 +198,4 @@ print(f'Itaú\n{itau()}\n')
 print(f'Real\n{real()}\n')
 print(f'Citibank\n{citibank()}\n')
 print(f'HSBC\n{hsbc()}\n')
+
