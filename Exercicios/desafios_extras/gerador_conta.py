@@ -190,12 +190,34 @@ def hsbc():
     return f'{account_formatted}'
 
 
-print(f'Banco do Brasil\n{banco_do_brazil()}\n')
-print(f'Santander\n{santander()}\n')
-print(f'Bradesco\n{bradesco()}\n')
-print(f'Caixa economica federal\n{caixa()}\n')
-print(f'Itaú\n{itau()}\n')
-print(f'Real\n{real()}\n')
-print(f'Citibank\n{citibank()}\n')
-print(f'HSBC\n{hsbc()}\n')
+def select_bank(bank='Indiferente'):
+    lista_bancos = ['Banco do Brasil', 'Caixa', 'Santander', 'Itau', 'HSBC', 'Citibank', 'Bradesco', 'Real',
+                    'Indiferente']
+    options = {
+        lista_bancos[0]: banco_do_brazil(),
+        lista_bancos[1]: santander(),
+        lista_bancos[2]: bradesco(),
+        lista_bancos[3]: caixa(),
+        lista_bancos[4]: itau(),
+        lista_bancos[5]: real(),
+        lista_bancos[6]: citibank(),
+        lista_bancos[7]: hsbc()
+    }
+    if bank == 'Indiferente':
+        selected = randint(0, 7)
+    else:
+        selected = lista_bancos.index(bank)
+    selected_bank = list(options.keys())
+    return selected_bank[selected], options[lista_bancos[selected]]
+
+
+# print(select_bank())
+# print(f'Banco do Brasil\n{banco_do_brazil()}\n')
+# print(f'Santander\n{santander()}\n')
+# print(f'Bradesco\n{bradesco()}\n')
+# print(f'Caixa economica federal\n{caixa()}\n')
+# print(f'Itaú\n{itau()}\n')
+# print(f'Real\n{real()}\n')
+# print(f'Citibank\n{citibank()}\n')
+# print(f'HSBC\n{hsbc()}\n')
 
