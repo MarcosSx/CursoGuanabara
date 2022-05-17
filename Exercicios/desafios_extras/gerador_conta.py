@@ -190,9 +190,12 @@ def hsbc():
     return f'{account_formatted}'
 
 
-def select_bank(bank='Indiferente'):
+def select_bank(bank='Indiferente', all_banks=False):
     lista_bancos = ['Banco do Brasil', 'Caixa', 'Santander', 'Itau', 'HSBC', 'Citibank', 'Bradesco', 'Real',
                     'Indiferente']
+    if all_banks:
+        return lista_bancos
+
     options = {
         lista_bancos[0]: banco_do_brazil(),
         lista_bancos[1]: santander(),
