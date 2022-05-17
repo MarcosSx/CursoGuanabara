@@ -9,7 +9,7 @@ root.geometry('300x500+750+250')
 root.resizable(False, False)
 root.iconbitmap(default='images\\nmea.ico')
 
-lista_bancos = ['Banco do Brasil', 'Caixa', 'Santander', 'Itau', 'HSBC', 'Citibank', 'Bradesco', 'Real', 'Indiferente']
+lista_bancos = select_bank(all_banks=True)
 img_fundo = tk.PhotoImage(file='images\\fundo.png')
 img_botao = tk.PhotoImage(file='images\\btn_gerar.png')
 img_botao_copy = tk.PhotoImage(file='images\\btn_copy.png')
